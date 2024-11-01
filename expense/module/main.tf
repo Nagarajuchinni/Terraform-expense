@@ -1,11 +1,10 @@
 resource "aws_instance" "instance" {
-    ami = var.ami
-    instance_type = var.instance_type
-    vpc_security_group_ids = var.sg_id
-    tags = {
-      Name = "${var.name}-${var.env}"
-    }
-  
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  vpc_security_group_ids = var.sg_id
+  tags = {
+    Name = "${var.name}-${var.env}"
+  }
 }
 
 resource "aws_route53_record" "record" {
@@ -15,7 +14,6 @@ resource "aws_route53_record" "record" {
   ttl     = 30
   records = [aws_instance.instance.private_ip]
 }
-
 # variable "ami" {}
 # variable "sg_id" {}
 # variable "zone_id" {}
