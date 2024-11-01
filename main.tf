@@ -4,7 +4,7 @@ resource "aws_instance" "instances" {
     instance_type = each.value["instance_type"]
     vpc_security_group_ids = var.sg_id
     tags = {
-      Name = "${each.value["Name"]}-${var.env}"
+      Name = "${each.value["name"]}-${var.env}"
     }
   
 }
