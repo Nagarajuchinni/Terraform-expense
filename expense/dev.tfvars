@@ -1,6 +1,6 @@
 env     = "dev"
 ami     = "ami-0b4f379183e5706b9"
-sg_id   = ["sg-033d8567b50d2e180"]
+sg_id   = ["sg-05c6fc961188560fd"]
 zone_id = "Z08026271RHGWGFS6JD44"
 
 components = {
