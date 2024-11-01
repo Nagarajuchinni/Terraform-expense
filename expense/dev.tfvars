@@ -1,5 +1,5 @@
 env     = "dev"
-ami     = "ami-03265a0778a880afb"
+ami     = "ami-0b4f379183e5706b9"
 sg_id   = ["sg-033d8567b50d2e180"]
 zone_id = "Z08026271RHGWGFS6JD44"
 
