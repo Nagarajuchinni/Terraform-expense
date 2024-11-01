@@ -8,6 +8,4 @@ module "expense" {
   zone_id = var.zone_id
   name = each.value["name"]
   sg_id = var.sg_id
-
-
 }
