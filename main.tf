@@ -9,18 +9,18 @@ resource "aws_instance" "instances" {
   
 }
 
-output "instances" {
-  value = aws_instance.instances
-}
-
-# resource "aws_route53_record" "Frontend" {
-#   for_each = var.components
-#   zone_id = var.zone_id
-#   name    = "${each.value["name"]}-${var.env}"
-#   type    = "A"
-#   ttl     = 30
-#   records = [aws_instance.instances[each.name["name"]].private_ip]
+# output "instances" {
+#   value = aws_instance.instances
 # }
+
+resource "aws_route53_record" "Frontend" {
+  for_each = var.components
+  zone_id = var.zone_id
+  name    = "${each.value["name"]}-${var.env}"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instances[each.value["name"]].private_ip]
+}
 
 # resource "aws_instance" "Backend" {
 #     ami = var.ami
